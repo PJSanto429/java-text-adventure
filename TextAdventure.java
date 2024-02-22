@@ -17,32 +17,6 @@ public class TextAdventure {
         // selectionSortTesting();
     }
 
-    // public static void selectionSort(int[] elements) {
-    //     int numCounter = 0;
-    //     for (int j = 0; j < elements.length; j++) {
-    //         int minIndex = 1;
-
-    //         for (int a = j + 1; a < elements.length; a++) {
-    //             numCounter++;
-    //             if (elements[a] < elements[minIndex]) {
-    //                 minIndex = a;
-    //                 numCounter++;
-    //             }
-    //         }
-    //         int temp = elements[j];
-    //         elements[j] = elements[minIndex];
-    //         elements[minIndex] = temp;
-    //     }
-    //     System.out.println("count amt ==> " + numCounter);
-    //     System.out.println(elements.toString());
-    // }
-
-    // public static void selectionSortTesting() {
-    //     int[] arr1 = {5, 3, 2, 1, 4};
-    //     System.out.println(arr1.toString());
-    //     selectionSort(arr1);
-    // }
-
     public static void getInput(Scanner input) {
         System.out.print(">> ");
 
@@ -73,6 +47,9 @@ public class TextAdventure {
         } else
         if (parsedInput.get(0).equals("drop")) {
             Helper.print("dropping something");
+        } else
+        if (parsedInput.get(0).equals("inv")) {
+            // 
         }
         else {
             Helper.print("Hmmm, I don't understand you");
@@ -84,6 +61,7 @@ public class TextAdventure {
      */
     public static void createObjects() {
         new Object("key", "Large Gold Key", "This is a large gold key", true, false);
+        new Object("key", "Small Jade Key", "This is a small jade key", true, false);
         new Object("table", "Tiny Wooden Table", "This is a tiny wooden tabl where ethan gets beaten up on", false, false);
     }
 }

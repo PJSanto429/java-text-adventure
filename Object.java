@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Object {
     private static ArrayList<Object> instances = new ArrayList<Object>();
+    private static Scanner input = new Scanner(System.in);
 
     private String name;
     private String longName;
@@ -17,14 +19,33 @@ public class Object {
     }
 
     public static Object getByName(String nameToFind) {
+
+        ArrayList<Object> items = new ArrayList<Object>();
         for (Object object : instances) {
             if (
                 object.getName(true).equals(nameToFind) ||
                 object.getLongName(true).equals(nameToFind)
             ) {
-                return object;
+                items.add(object);
             }
         }
+
+        if (items.size() == 1) {
+            return items.get(0);
+        } else if (items.size() > 1) {
+            Helper.print("Which did you mean? ");
+
+            for (Object o : items) {
+                Helper.print(o.getLongName());
+            }
+            System.out.print(">> ");
+            String choice = input.nextLine();
+
+            try {
+                // 
+            } catch 
+        }
+
         return null;
     }
 
@@ -40,6 +61,13 @@ public class Object {
             }
         }
         return false;
+    }
+
+    public static void seeInventory() {
+        Helper.print("Your inventory consists of: ");
+        for (Object object : instances) {
+            Helper.print(object.getLongName(false));
+        }
     }
 
     // *------------------ instance methods + constructor --------------------
